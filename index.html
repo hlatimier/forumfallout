@@ -4,55 +4,372 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vault Gaming Network</title>
-<link rel="stylesheet" href="style.css">
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#050805;
+    color:#6cff6c;
+    font-family:'Share Tech Mono',monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    overflow:hidden;
+}
+
+/* Scanlines */
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,.04) 0px,
+        rgba(255,255,255,.04) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    pointer-events:none;
+    opacity:.18;
+    animation:flicker .15s infinite;
+}
+
+/* Lueur */
+body::after{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:radial-gradient(circle, transparent 40%, rgba(0,0,0,.65));
+    pointer-events:none;
+}
+
+@keyframes flicker{
+0%{opacity:.18;}
+50%{opacity:.22;}
+100%{opacity:.17;}
+}
+
+.terminal{
+
+width:1100px;
+height:90vh;
+
+background:#091209;
+
+border:3px solid #55ff55;
+
+box-shadow:
+0 0 20px #00ff00,
+0 0 60px rgba(0,255,0,.25);
+
+display:flex;
+flex-direction:column;
+
+overflow:hidden;
+
+}
+
+header{
+
+padding:20px;
+
+border-bottom:2px solid #55ff55;
+
+}
+
+header h1{
+
+font-size:42px;
+text-shadow:0 0 15px #00ff00;
+
+}
+
+header p{
+
+margin-top:5px;
+opacity:.8;
+
+}
+
+nav{
+
+display:flex;
+gap:10px;
+
+padding:15px;
+
+border-bottom:2px solid #55ff55;
+
+}
+
+nav button{
+
+background:none;
+color:#66ff66;
+
+border:1px solid #55ff55;
+
+padding:10px 18px;
+
+font-family:inherit;
+font-size:16px;
+
+cursor:pointer;
+
+transition:.25s;
+
+}
+
+nav button:hover{
+
+background:#55ff55;
+color:#081008;
+
+box-shadow:0 0 10px #55ff55;
+
+}
+
+.content{
+
+display:flex;
+flex:1;
+
+}
+
+.sidebar{
+
+width:240px;
+
+border-right:2px solid #55ff55;
+
+padding:15px;
+
+overflow:auto;
+
+}
+
+.sidebar h2{
+
+margin-bottom:15px;
+
+}
+
+.sidebar ul{
+
+list-style:none;
+
+}
+
+.sidebar li{
+
+padding:10px;
+
+margin-bottom:8px;
+
+border:1px solid #2fff2f;
+
+cursor:pointer;
+
+transition:.2s;
+
+}
+
+.sidebar li:hover{
+
+background:#123512;
+
+transform:translateX(5px);
+
+}
+
+.main{
+
+flex:1;
+
+padding:20px;
+
+overflow:auto;
+
+}
+
+.category{
+
+margin-bottom:30px;
+
+}
+
+.category h2{
+
+margin-bottom:15px;
+
+border-left:5px solid #55ff55;
+
+padding-left:10px;
+
+}
+
+.topic{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:15px;
+
+margin-bottom:10px;
+
+border:1px solid #33ff33;
+
+transition:.2s;
+
+}
+
+.topic:hover{
+
+background:#143214;
+
+transform:scale(1.01);
+
+box-shadow:0 0 15px rgba(0,255,0,.25);
+
+}
+
+.author{
+
+opacity:.7;
+font-size:14px;
+margin-top:5px;
+
+}
+
+.stats{
+
+text-align:right;
+font-size:14px;
+
+}
+
+footer{
+
+padding:12px;
+
+border-top:2px solid #55ff55;
+
+text-align:center;
+
+letter-spacing:3px;
+
+}
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#55ff55;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<div class="scanlines"></div>
-
 <div class="terminal">
 
 <header>
+
 <h1>VAULT GAMING NETWORK</h1>
-<p>>> Terminal connecté...</p>
+
+<p>> TERMINAL EN LIGNE - Pip-Gaming OS v3.0</p>
+
 </header>
 
 <nav>
-<a href="#">Accueil</a>
-<a href="#">Forums</a>
-<a href="#">Jeux</a>
-<a href="#">Classements</a>
-<a href="#">Profil</a>
+
+<button>ACCUEIL</button>
+<button>FORUMS</button>
+<button>JEUX</button>
+<button>NEWS</button>
+<button>PROFIL</button>
+
 </nav>
 
-<section class="forum">
+<div class="content">
+
+<div class="sidebar">
+
+<h2>SECTIONS</h2>
+
+<ul>
+
+<li>🎮 Jeux PC</li>
+<li>🕹 Consoles</li>
+<li>💻 Hardware</li>
+<li>👾 Jeux rétro</li>
+<li>🏆 Esport</li>
+<li>📺 Streaming</li>
+<li>🎲 Jeux indépendants</li>
+<li>☢ Fallout</li>
+
+</ul>
+
+</div>
+
+<div class="main">
 
 <div class="category">
+
 <h2>► Jeux PC</h2>
 
 <div class="topic">
+
 <div>
-<h3>Les meilleurs RPG de tous les temps</h3>
-<p>Créé par Wanderer</p>
+
+<h3>Quel est votre RPG préféré ?</h3>
+
+<div class="author">Créé par Wanderer</div>
+
 </div>
 
 <div class="stats">
-<p>Réponses : 134</p>
-<p>Vues : 5 420</p>
+
+134 réponses<br>
+5420 vues
+
 </div>
+
 </div>
 
 <div class="topic">
+
 <div>
+
 <h3>Votre configuration gaming</h3>
-<p>Créé par VaultBoy</p>
+
+<div class="author">Créé par VaultBoy</div>
+
 </div>
 
 <div class="stats">
-<p>Réponses : 87</p>
-<p>Vues : 3 194</p>
+
+92 réponses<br>
+3980 vues
+
 </div>
+
 </div>
 
 </div>
@@ -62,27 +379,41 @@
 <h2>► Consoles</h2>
 
 <div class="topic">
+
 <div>
-<h3>Nintendo Switch 2</h3>
-<p>Créé par Link</p>
+
+<h3>Nintendo Switch 2 : vos impressions</h3>
+
+<div class="author">Créé par Link</div>
+
 </div>
 
 <div class="stats">
-<p>Réponses : 62</p>
-<p>Vues : 2 300</p>
+
+66 réponses<br>
+2412 vues
+
 </div>
+
 </div>
 
 <div class="topic">
+
 <div>
-<h3>PlayStation vs Xbox</h3>
-<p>Créé par Survivor</p>
+
+<h3>PlayStation ou Xbox ?</h3>
+
+<div class="author">Créé par Survivor</div>
+
 </div>
 
 <div class="stats">
-<p>Réponses : 201</p>
-<p>Vues : 11 872</p>
+
+203 réponses<br>
+11904 vues
+
 </div>
+
 </div>
 
 </div>
@@ -92,23 +423,34 @@
 <h2>► Jeux rétro</h2>
 
 <div class="topic">
+
 <div>
-<h3>Vos consoles préférées des années 90</h3>
-<p>Créé par Pixel</p>
+
+<h3>Votre première console ?</h3>
+
+<div class="author">Créé par PixelMaster</div>
+
 </div>
 
 <div class="stats">
-<p>Réponses : 45</p>
-<p>Vues : 1 091</p>
+
+44 réponses<br>
+1050 vues
+
 </div>
+
 </div>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 <footer>
-TERMINAL STATUS : ONLINE
+
+TERMINAL STATUS : ONLINE ● SIGNAL 100% ● RADIATION : LOW
+
 </footer>
 
 </div>
