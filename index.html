@@ -1,405 +1,94 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vault Gaming Terminal</title>
 
-<style>
+    <meta charset="UTF-8">
 
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+    <title>Vault Forum</title>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-body{
-    background:#050805;
-    color:#66ff66;
-    font-family:'Share Tech Mono',monospace;
-    overflow:hidden;
-}
-
-/* Scanlines */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:repeating-linear-gradient(
-        to bottom,
-        rgba(255,255,255,.03) 0px,
-        rgba(255,255,255,.03) 2px,
-        transparent 2px,
-        transparent 4px
-    );
-    pointer-events:none;
-    opacity:.25;
-    animation:flicker .15s infinite;
-}
-
-@keyframes flicker{
-
-0%{opacity:.20;}
-50%{opacity:.27;}
-100%{opacity:.22;}
-
-}
-
-/* Mise en page */
-
-.container{
-
-display:flex;
-height:100vh;
-
-}
-
-/* Navigation */
-
-.sidebar{
-
-width:260px;
-border-right:2px solid #55ff55;
-padding:25px;
-background:#071107;
-box-shadow:0 0 20px rgba(0,255,0,.2);
-
-}
-
-.logo{
-
-font-size:32px;
-margin-bottom:35px;
-text-shadow:0 0 15px #00ff00;
-
-}
-
-.menu{
-
-list-style:none;
-
-}
-
-.menu li{
-
-margin-bottom:18px;
-
-}
-
-.menu a{
-
-display:block;
-padding:12px;
-
-text-decoration:none;
-color:#66ff66;
-
-border:1px solid #33ff33;
-
-transition:.2s;
-
-}
-
-.menu a:hover{
-
-background:#55ff55;
-color:#081008;
-
-transform:translateX(6px);
-
-box-shadow:0 0 12px #00ff00;
-
-}
-
-/* Contenu */
-
-.content{
-
-flex:1;
-padding:35px;
-overflow-y:auto;
-
-}
-
-.header{
-
-border-bottom:2px solid #44ff44;
-padding-bottom:15px;
-margin-bottom:25px;
-
-}
-
-.header h1{
-
-font-size:42px;
-
-text-shadow:0 0 15px #00ff00;
-
-}
-
-.header p{
-
-margin-top:10px;
-
-color:#9cff9c;
-
-}
-
-/* Catégories */
-
-.category{
-
-margin-bottom:35px;
-
-}
-
-.category h2{
-
-padding:10px;
-margin-bottom:15px;
-
-border-left:6px solid #55ff55;
-
-font-size:28px;
-
-}
-
-/* Sujets */
-
-.topic{
-
-display:flex;
-
-justify-content:space-between;
-
-align-items:center;
-
-padding:18px;
-
-margin-bottom:12px;
-
-border:1px solid #33ff33;
-
-background:#091409;
-
-transition:.25s;
-
-}
-
-.topic:hover{
-
-background:#123012;
-
-transform:translateX(5px);
-
-box-shadow:0 0 15px rgba(0,255,0,.35);
-
-}
-
-.topic h3{
-
-margin-bottom:6px;
-
-font-size:22px;
-
-}
-
-.topic p{
-
-color:#9eff9e;
-
-}
-
-.stats{
-
-text-align:right;
-
-}
-
-.stats div{
-
-margin-bottom:4px;
-
-}
-
-/* Pied */
-
-footer{
-
-margin-top:40px;
-border-top:2px solid #55ff55;
-padding-top:20px;
-color:#99ff99;
-
-}
-
-</style>
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<div class="container">
+    <!-- Conteneur principal -->
+    <div class="pipboy">
 
-<div class="sidebar">
+        <!-- Titre -->
+        <header>
 
-<div class="logo">
+            <h1>VAULT FORUM</h1>
+            <p>Gaming • Rétro • Mods • Speedrun</p>
 
-VAULT-NET
+        </header>
 
-</div>
+        <!-- Barre de navigation -->
+        <nav>
 
-<ul class="menu">
+            <a href="#">Accueil</a>
+            <a href="#">Jeux</a>
+            <a href="#">Actualités</a>
+            <a href="#">Mods</a>
+            <a href="#">Communauté</a>
 
-<li><a href="#">► Accueil</a></li>
-<li><a href="#">► Forum</a></li>
-<li><a href="#">► Actualités</a></li>
-<li><a href="#">► Tests</a></li>
-<li><a href="#">► Guides</a></li>
-<li><a href="#">► Multijoueur</a></li>
-<li><a href="#">► Tournois</a></li>
-<li><a href="#">► Profil</a></li>
-<li><a href="#">► Déconnexion</a></li>
+        </nav>
 
-</ul>
+        <!-- Liste des catégories -->
+        <section class="forum">
 
-</div>
+            <article class="category">
 
-<div class="content">
+                <h2>🎮 Jeux vidéo</h2>
 
-<div class="header">
+                <p>Discutez des dernières sorties.</p>
 
-<h1>VAULT GAMING TERMINAL</h1>
+                <span>124 sujets</span>
 
-<p>> Terminal connecté...</p>
+            </article>
 
-</div>
+            <article class="category">
 
-<div class="category">
+                <h2>🕹️ Rétrogaming</h2>
 
-<h2>► Jeux PC</h2>
+                <p>NES, SNES, Mega Drive...</p>
 
-<div class="topic">
+                <span>56 sujets</span>
 
-<div>
+            </article>
 
-<h3>Quel est votre RPG préféré ?</h3>
+            <article class="category">
 
-<p>Posté par Wanderer • il y a 5 min</p>
+                <h2>⚙️ Mods</h2>
 
-</div>
+                <p>Créations de la communauté.</p>
 
-<div class="stats">
+                <span>82 sujets</span>
 
-<div>Réponses : 125</div>
-<div>Vues : 5 482</div>
+            </article>
 
-</div>
+            <article class="category">
 
-</div>
+                <h2>🏆 Speedrun</h2>
 
-<div class="topic">
+                <p>Records et astuces.</p>
 
-<div>
+                <span>31 sujets</span>
 
-<h3>Votre configuration Gaming 2026</h3>
+            </article>
 
-<p>Posté par TechGuy • il y a 22 min</p>
+        </section>
 
-</div>
+        <!-- Pied de page -->
+        <footer>
 
-<div class="stats">
+            Vault Forum © 2077
 
-<div>Réponses : 81</div>
-<div>Vues : 2 714</div>
+        </footer>
 
-</div>
-
-</div>
-
-</div>
-
-<div class="category">
-
-<h2>► Consoles</h2>
-
-<div class="topic">
-
-<div>
-
-<h3>Nintendo Switch 2 : vos impressions</h3>
-
-<p>Posté par LinkMaster</p>
-
-</div>
-
-<div class="stats">
-
-<div>Réponses : 211</div>
-<div>Vues : 12 008</div>
-
-</div>
-
-</div>
-
-<div class="topic">
-
-<div>
-
-<h3>PlayStation ou Xbox ?</h3>
-
-<p>Posté par Survivor</p>
-
-</div>
-
-<div class="stats">
-
-<div>Réponses : 382</div>
-<div>Vues : 24 904</div>
-
-</div>
-
-</div>
-
-</div>
-
-<div class="category">
-
-<h2>► Jeux rétro</h2>
-
-<div class="topic">
-
-<div>
-
-<h3>Les meilleures consoles des années 90</h3>
-
-<p>Posté par PixelHero</p>
-
-</div>
-
-<div class="stats">
-
-<div>Réponses : 59</div>
-<div>Vues : 1 523</div>
-
-</div>
-
-</div>
-
-</div>
-
-<footer>
-
-STATUS : ONLINE • SIGNAL 100% • RADIATION : 0 RAD • UTILISATEURS CONNECTÉS : 214
-
-</footer>
-
-</div>
-
-</div>
+    </div>
 
 </body>
+
 </html>
